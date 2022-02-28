@@ -21,3 +21,8 @@ std::string const & AMateria::getType() const
 {
 	return this->type;
 }
+
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << "Something abstract has been used vs" + target.getName() << std::endl;
+}

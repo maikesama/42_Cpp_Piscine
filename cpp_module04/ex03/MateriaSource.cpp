@@ -47,8 +47,12 @@ AMateria * MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4 && i <= ld; i++)
 	{
-		if (!type.compare(learned[i]->getType()))
-			return (new AMateria(type));
+		// if (!type.compare(learned[i]->getType()))
+		// 	return (new learned[i]);
+		if (!type.compare(learned[i]->getType()) && !type.compare("ice"))
+		 	return (new Ice());
+		else if (!type.compare(learned[i]->getType()) && !type.compare("cure"))
+			return (new Cure());
 	}
 	return 0;
 }

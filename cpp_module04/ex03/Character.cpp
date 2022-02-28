@@ -8,8 +8,8 @@ Character::Character(std::string const & name) : used(0), unused(0) {
 
 Character::~Character() 
 {
-	delete [] *inventory;
-	delete [] *left;
+	//delete [] *inventory;
+	//delete [] *left;
 	
 	return ;
 }
@@ -45,9 +45,14 @@ void	Character::equip(AMateria *m)
 	}
 }
 
+std::string const & Character::getName() const
+{
+	return this->name;
+}
+
 void	Character::unequip(int indx)
 {
-	if (indx <= used && indx < 4)
+	if (indx < used && indx < 4)
 	{
 		left[unused++] = inventory[indx];
 		for (int i = indx; i < 4; i++)
@@ -59,6 +64,6 @@ void	Character::unequip(int indx)
 
 void	Character::use(int indx, ICharacter& target)
 {
-	if (indx <= used && indx < 4)
+	if (indx < used && indx < 4)
 		inventory[indx]->use(target);
 }

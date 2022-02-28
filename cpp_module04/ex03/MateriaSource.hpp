@@ -2,6 +2,8 @@
 # define MATERIASOURCE_HPP
 
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class IMateriaSource
 {

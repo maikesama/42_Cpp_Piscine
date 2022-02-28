@@ -1,6 +1,7 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
+class AMateria;
 #include "AMateria.hpp"
 #include <iostream>
 
@@ -24,6 +25,8 @@ class Character : public ICharacter
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
+		virtual std::string const & getName() const;
+
 
 	protected :
 		std::string	name;
