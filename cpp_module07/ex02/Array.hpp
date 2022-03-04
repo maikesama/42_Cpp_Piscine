@@ -51,7 +51,7 @@ class	Array
 
 	T & operator[](unsigned int i)
 	{
-		if (i > _size)
+		if (i > _size || i < 0)
 			throw (std::exception());
 		return (_a[i]);
 	}
