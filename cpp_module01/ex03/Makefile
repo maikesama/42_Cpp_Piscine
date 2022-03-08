@@ -9,12 +9,17 @@ SRCS = HumanA.cpp\
 		main.cpp\
 		HumanB.cpp
 
-$(NAME) :
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+OBJS = $(SRCS:.cpp=.o)
+
+$(NAME) : $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 all : $(NAME)
 
 clean :
 	rm -f $(NAME)
+
+fclean :
+	rm -f $(OBJS) $(NAME)
 	
-re : clean all
+re : fclean all

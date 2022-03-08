@@ -6,20 +6,20 @@
 #include <vector>
 
 template <typename T>
-int easyfind(T cont, int value)
+int easyfind(T const cont, int value)
 {
-	int	it;
+	typename T::const_iterator it;
+	
+	it = std::find(cont.begin(), cont.end(), value);
 
-	for (it = 0; cont[it]; it++)
+	if (it == cont.end())
 	{
-		if (cont[it] == value)
-		{
-			std::cout << "Element found in container" << std::endl;
-			return 0;
-		}
+		std::cout << "Element not found" <<std::endl;
+		return 1;
 	}
-	std::cout << "Element not found" <<std::endl;
-	return 1;
+	std::cout << "Element found in container" << std::endl;
+	return 0;
+	
 }
 
 

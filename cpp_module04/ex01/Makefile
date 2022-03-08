@@ -6,12 +6,17 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp main.cpp Brain.cpp\
 
-$(NAME) :
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
-	
+OBJS = $(SRCS:.cpp=.o)
+
+$(NAME) : $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
 all : $(NAME)
 
 clean :
 	rm -f $(NAME)
 
-re : clean all
+fclean :
+	rm -f $(OBJS) $(NAME)
+	
+re : fclean all

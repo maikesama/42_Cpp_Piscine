@@ -1,10 +1,10 @@
-NAME = LotOfForm
+NAME = MutantStack
 
 CC = g++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp\
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

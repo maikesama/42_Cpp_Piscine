@@ -9,12 +9,17 @@ SRCS = main.cpp\
 		randomChump.cpp\
 		Zombie.cpp
 
-all : $(NAME)
+OBJS = $(SRCS:.cpp=.o)
 
-$(NAME) :
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME) : $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+all : $(NAME)
 
 clean :
 	rm -f $(NAME)
 
-re : clean all
+fclean :
+	rm -f $(OBJS) $(NAME)
+	
+re : fclean all
